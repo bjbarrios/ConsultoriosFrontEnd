@@ -13,8 +13,11 @@ async function requestJson(url, options = {}) {
 function toDoctor(apiDoctor) {
     return {
         id: String(apiDoctor.id),
-        fullName: apiDoctor.fullName,
+        name: apiDoctor.name,
+        numberDocument: apiDoctor.numberDocument,
+        typeDocument: apiDoctor.typeDocument,
         email: apiDoctor.email,
+        phone: apiDoctor.phone,
         specialty: apiDoctor.specialty ? { id: apiDoctor.specialty.id, title: apiDoctor.specialty.title } : null,
         profile: apiDoctor.profile ? { phone: apiDoctor.profile.phone, bio: apiDoctor.profile.bio } : null,
         status: apiDoctor.status === 'INACTIVE' ? 'Inactive' : 'Active'
